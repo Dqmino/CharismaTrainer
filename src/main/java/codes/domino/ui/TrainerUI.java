@@ -1,5 +1,7 @@
 package codes.domino.ui;
 
+import codes.domino.CharismaTrainerMain;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -14,6 +16,7 @@ public class TrainerUI {
         label.setFont(new Font("Arial", Font.BOLD, 30));
         label.setHorizontalAlignment(JLabel.CENTER);
         frame.add(label);
+        frame.setIconImage(Toolkit.getDefaultToolkit().getImage(CharismaTrainerMain.class.getResource("/icons/icon.png")));
         frame.setVisible(true);
     }
 }

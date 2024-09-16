@@ -30,9 +30,9 @@ public class ScreenReader {
             else
                 result.append("&");
 
-            result.append(URLEncoder.encode(key, StandardCharsets.UTF_8));
+            result.append(URLEncoder.encode(key, String.valueOf(StandardCharsets.UTF_8)));
             result.append("=");
-            result.append(URLEncoder.encode(value.toString(), StandardCharsets.UTF_8));
+            result.append(URLEncoder.encode(value.toString(), String.valueOf(StandardCharsets.UTF_8)));
         }
         return result.toString();
     }
