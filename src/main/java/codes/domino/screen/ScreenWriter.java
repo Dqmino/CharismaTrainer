@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -28,11 +29,14 @@ public class ScreenWriter {
 
     public static void scanScreen() throws IOException {
         clickText();
+
         BufferedImage screenCapture = robot.createScreenCapture(screenRect);
-        ImageIO.write(screenCapture, "png", new File("image.png"));
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        ImageIO.write(screenCapture, "png", baos);
+        baos.close();
 
         String text = postOCRRequest(Base64.getEncoder().encodeToString(
-                Files.readAllBytes((new File("image.png")).toPath()))).getString("ParsedText")
+                baos.toByteArray())).getString("ParsedText")
                 .replace("Try some small talk on someone nearby.", "").replace("'", "")
                 .replace("\n", " ").replace("\r", "");
 
