@@ -17,7 +17,7 @@ import static codes.domino.screen.ScreenReader.postOCRRequest;
 
 public class ScreenWriter {
     private static final Robot robot;
-    private static final Rectangle screenRect = new Rectangle(780, 430, 390, 50);
+    private static final Rectangle screenRect = new Rectangle(789, 443, 402, 61);
 
     static {
         try {
@@ -82,7 +82,7 @@ public class ScreenWriter {
     }
 
     private static void clickText() {
-        robot.mouseMove(955, 489);
+        robot.mouseMove(955, 505);
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         robot.delay(100);
         robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
