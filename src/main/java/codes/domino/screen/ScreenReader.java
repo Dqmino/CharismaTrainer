@@ -12,7 +12,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 
 public class ScreenReader {
-    private final static String mApiKey = "K88292449588957";
+    private final static String mApiKey = "K82996457988957";
     private final static String mLanguage = "eng";
     private final static boolean isOverlayRequired = false;
 
